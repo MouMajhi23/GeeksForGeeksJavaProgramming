@@ -4,7 +4,7 @@ class Solution
     String reverseWords(String S)
     {
         // code here 
-        String arr[] = S.split(".");
+        String arr[] = S.split("\\.");
         Collections.reverse(Arrays.asList(arr));
         String res = String.join(".", arr);
         return res;
