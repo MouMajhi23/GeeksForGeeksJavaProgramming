@@ -3,14 +3,17 @@ class Solution
     //Function to check if a string is Pangram or not.
     public static boolean checkPangram  (String s) {
         // your code here
+	//i convert everything to lowercase to reduce the complexity
         String mystr = s.toLowerCase();
+		// Make use of HashSet to avoid repeating characters
 		HashSet<String> hs = new HashSet<String>();
 		for(int i=0;i<mystr.length();i++) {
-			
 			if(mystr.charAt(i)>=97 && mystr.charAt(i)<=122) {
+				// as add method accept String so i added "" 
 				hs.add(mystr.charAt(i)+"");
 			}
 		}
+		//if the size becomes 26 then it is a Pangram 
 		return(hs.size()==26);
 	
     }
