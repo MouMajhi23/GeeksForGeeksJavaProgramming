@@ -1,0 +1,22 @@
+class Solution{
+    //using sliding window approach
+    static int longestSubstrDistinctChars(String S){
+        // code here
+        int output = 0;
+		int left = 0;
+		HashMap<Character, Integer> hs = new HashMap<Character, Integer>();
+		
+		for(int right=0; right<S.length();right++) {
+			char ch = S.charAt(right);
+			if(hs.containsKey(ch)) {
+				left = Math.max(hs.get(ch) + 1, left);
+			}
+			hs.put(ch, right);
+			
+			output = Math.max(output, right-left+1);
+		}
+		
+		return output;
+        
+    }
+}
