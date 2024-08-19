@@ -9,7 +9,7 @@ class Solution
 		HashSet<String> hs = new HashSet<String>();
 		for(int i=0;i<mystr.length();i++) {
 			if(mystr.charAt(i)>=97 && mystr.charAt(i)<=122) {
-				// as add method accept String so i added "" 
+				// as hs map  method accept String so i added "" 
 				hs.add(mystr.charAt(i)+"");
 			}
 		}
