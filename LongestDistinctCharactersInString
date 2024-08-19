@@ -1,18 +1,23 @@
 class Solution{
-    //using sliding window approach
+    //using sliding window approach to pass all the test cases
+//if you use two for loop then it will take more time, & some of the test cases will failed
     static int longestSubstrDistinctChars(String S){
         // code here
         int output = 0;
+
 		int left = 0;
 		HashMap<Character, Integer> hs = new HashMap<Character, Integer>();
 		
 		for(int right=0; right<S.length();right++) {
 			char ch = S.charAt(right);
+			//if map already contains the key
 			if(hs.containsKey(ch)) {
+				//we will increase the left
 				left = Math.max(hs.get(ch) + 1, left);
 			}
+			//put the character as key & index as value
 			hs.put(ch, right);
-			
+			//to find out the maximum length
 			output = Math.max(output, right-left+1);
 		}
 		
