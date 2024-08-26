@@ -1,0 +1,28 @@
+class Solution{
+    static int isPossible(String S){
+        // code here
+        
+        int len = S.length();
+        if(len<4){
+            return 0;
+        }
+        boolean flag=false;
+        
+        for(int i =1;i<len-2;i++){
+            for(int j = i+1;j<len-1;j++){
+                for(int k=j+1;k<len;k++){
+                    String first = S.substring(0,i);
+                    String second = S.substring(i,j);
+                    String third = S.substring(j,k);
+                    String fourth = S.substring(k,len);
+                    
+                    if(!first.equals(second) && !first.equals(third)
+                    && !first.equals(fourth) && !second.equals(third) 
+                    && !second.equals(fourth)&& !third.equals(fourth))
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+}
