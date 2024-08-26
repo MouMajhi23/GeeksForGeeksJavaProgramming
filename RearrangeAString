@@ -1,0 +1,26 @@
+class Solution
+{
+    public String arrangeString(String s)
+        {
+            //code here.
+            String strHolder = "";
+           // String numHolder = "";
+            int num = 0;
+            for(int i =0;i<s.length();i++){
+                if(s.charAt(i)>='A' && s.charAt(i)<='Z')
+                    strHolder = strHolder+s.charAt(i);
+                else{
+                    
+                    num = num + Integer.parseInt(s.charAt(i)+"");
+                }
+            }
+            char temp[] = strHolder.toCharArray();
+            Arrays.sort(temp);
+            String output = new String(temp);
+            
+            if(num>0)
+            return output+num;
+            else
+            return output;
+        }
+}
