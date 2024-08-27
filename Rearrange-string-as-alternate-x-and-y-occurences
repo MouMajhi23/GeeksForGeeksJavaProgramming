@@ -1,0 +1,44 @@
+class Solution
+{
+    
+    public String arrangeString(String str, int x, int y)
+    {
+        //complete the function here
+        
+        StringBuilder res = new StringBuilder();
+        int numberOfZero = 0;
+        int numberOfOne = 0;
+
+        // Count the number of '0's and '1's
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '0')
+                numberOfZero++;
+            else
+                numberOfOne++;
+        }
+
+        while (numberOfZero > 0 && numberOfOne > 0) {
+            int count = Math.min(x, numberOfZero);
+            res.append("0".repeat(count));
+            numberOfZero -= count;
+
+            count = Math.min(y, numberOfOne);
+            res.append("1".repeat(count));
+            numberOfOne -= count;
+        }
+
+        // Append remaining '0's
+        if (numberOfZero > 0) {
+            res.append("0".repeat(numberOfZero));
+        }
+
+        // Append remaining '1's
+        if (numberOfOne > 0) {
+            res.append("1".repeat(numberOfOne));
+        }
+
+        return res.toString();
+	
+    }
+
+}
