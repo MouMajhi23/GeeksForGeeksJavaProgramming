@@ -2,6 +2,7 @@ class Solution {
     // Finds decimal value of a given roman numeral
     public int romanToDecimal(String str) {
         // code here
+//using hasmap 
         HashMap<String, Integer> hs = new HashMap<String, Integer>();
 		hs.put("I", 1);
 		hs.put("V", 5);
