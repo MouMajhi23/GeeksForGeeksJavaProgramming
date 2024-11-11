@@ -1,0 +1,15 @@
+class Solution {
+    // Function is to check whether two strings are anagram of each other or not.
+    public static boolean areAnagrams(String s1, String s2) {
+
+        // Your code here
+        char arr[]=s1.toCharArray();
+		char arr2[] = s2.toCharArray();
+		Arrays.sort(arr);
+		Arrays.sort(arr2);
+		String temp1 = new String(arr);
+		String temp2 = new String(arr2);
+		return temp1.equals(temp2);
+		
+    }
+}
