@@ -42,6 +42,7 @@ class Solution
         return false;
 		int index1=-1, index2=-1;
 		for(int i=0;i<S1.length();i++){
+			//check where the characters are mismatched 
 		    if(S1.charAt(i)!=S2.charAt(i)){
 		        if(index1==-1)
 		            index1=i;
