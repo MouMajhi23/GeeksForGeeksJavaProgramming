@@ -1,0 +1,22 @@
+class Solution {
+    
+    void convert(int[] arr, int n) {
+        //Code here
+        int temp[]=arr.clone();
+		Arrays.sort(temp);
+		
+		HashMap<Integer,Integer> hs = new HashMap<Integer,Integer>();
+		for(int i=0;i<temp.length;i++) {
+		//	System.out.println(temp[i]);
+			hs.put(temp[i],i);
+			//System.out.println(t);
+		}
+	//	System.out.println(hs.containsKey(5));
+	//	System.out.println(hs);
+		for(int i =0;i<hs.size();i++) {
+			int index = hs.get(arr[i]);
+			arr[i]=index;
+		}
+// 		
+        
+    }
