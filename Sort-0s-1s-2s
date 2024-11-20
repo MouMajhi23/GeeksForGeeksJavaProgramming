@@ -1,6 +1,0 @@
- public void sort012(int[] arr) {
-        // code here
-//use Arrays.sort method
-        Arrays.sort(arr);
-        
-    }
