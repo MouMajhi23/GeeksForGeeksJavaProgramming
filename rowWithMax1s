@@ -1,0 +1,25 @@
+class Solution {
+    public int rowWithMax1s(int arr[][]) {
+        // code here
+        int index = -1;
+		int result = 0;
+		int  i;
+		for( i =0;i<arr.length;i++) {
+			int count = 0;
+			
+			for(int j=0 ;j< arr[0].length ; j++) {
+		//		System.out.print(arr[i][j] +" ");
+				if(arr[i][j]==1)
+					count++;
+			}
+			
+		//	System.out.println();
+		//	System.out.println("count" +count);
+			if(result<count) {
+				result = count;
+				index = i;
+			}
+		}
+		return index;
+    }
+}
