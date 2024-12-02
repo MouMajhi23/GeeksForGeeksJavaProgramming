@@ -1,0 +1,37 @@
+class Solution {
+    long max_sum(int a[], int n) {
+        // Your code here
+       
+		long sum = 0;
+		int k = 0;
+		long prev = 0;
+		for(int j : a){
+		    sum += j;
+		    
+		}
+		for(int i : a) {
+			prev = prev +(long) i*k;
+			k++;
+		}
+	//	System.out.println("sum of array"+sum);
+		long ans = prev;
+		
+		for(int i=1; i<n ;i++) {
+	//		System.out.println("Previous sum: "+prev);
+			long exceptional = sum - a[i-1];
+		//	System.out.println("Exceptional: "+exceptional);
+			long mult =(long) a[i-1]*(n-1);
+		//	System.out.println("Mult: "+mult+" "+arr[i-1]+ " "+(n-i));
+			long temp = prev - exceptional+mult;
+		//	System.out.println("temp : "+temp);
+		    if(ans<temp){
+		        ans = temp;
+		    }
+			prev = temp;
+			
+		}
+	//	System.out.println(ans);
+		
+		return ans;
+    }
+}
